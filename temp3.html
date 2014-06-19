@@ -1,0 +1,77 @@
+
+	
+	
+
+/*
+
+$allowedExts = array("mp3", "wma", "wav", "ogg", "aac", "aiff", "amr", "ra");
+
+$arr = explode(".", $_FILES["file"]["name"]);
+$extension = end($arr);
+
+if ((($_FILES["file"]["type"] == "audio/mp3")
+
+|| ($_FILES["file"]["type"] == "audio/wma")
+
+|| ($_FILES["file"]["type"] == "audio/wav")
+
+|| ($_FILES["file"]["type"] == "audio/ogg")
+|| ($_FILES["file"]["type"] == "audio/aac")
+|| ($_FILES["file"]["type"] == "audio/aiff")
+|| ($_FILES["file"]["type"] == "audio/amr")
+|| ($_FILES["file"]["type"] == "audio/ra"))
+&& ($_FILES["file"]["size"] < 20000000)
+&& in_array($extension, $allowedExts))
+  {
+  if ($_FILES["file"]["error"] > 0)
+    {
+    echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+    }
+  else
+    {
+    
+    
+
+    if (file_exists("upload/" . $_FILES["file"]["name"]))
+      {
+    ?> <font size="26" color="red"> <?php
+	  echo $_FILES["file"]["name"] . " already exists. ";
+      ?> </font>
+	  <?php
+	  
+	  }
+    else
+      {
+      move_uploaded_file($_FILES["file"]["tmp_name"],
+      "upload/" . $_FILES["file"]["name"]);
+	  
+	  
+	 putting song name in table
+	  
+	  mysql_query("INSERT INTO `".$_SESSION['username']"`('songs') VALUES (\"$_FILES["file"]["name"]\")");
+	  
+	  */
+	  
+	  
+	  ?><font face="Copperplate Gothic Bold" size="26" color="red"> Song Uploaded Successfully</br></br></font>
+	  
+<audio controls="controls">
+  <source src="upload/<?php echo $_FILES["file"]["name"] ?>" type="audio/mp3">
+ 
+Your browser does not support this audio format.
+</audio>
+
+	  <?php 
+	  echo "</br></br>";
+	  echo "Song: " . $_FILES["file"]["name"] . "<br />";
+    echo "Type: " . $_FILES["file"]["type"] . "<br />";
+    echo "Size: " . ($_FILES["file"]["size"] / (1024*1024)) . " MB<br />";
+      
+      }
+    }
+  }
+else
+  {
+  echo "Invalid file";
+  }
+  
