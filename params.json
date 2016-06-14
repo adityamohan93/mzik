@@ -1,0 +1,6 @@
+{
+  "name": "Mzik",
+  "tagline": "Music streaming social website",
+  "body": "mzik\r\n=======\r\n\r\n#Music streaming social website built for web development competition in Avishkar 2012 \r\n\r\n## Need to run on Apache server\r\n\r\n###A music streaming website for discovering music and suggesting friends based on their favourite songs and artists users have in common.\r\n\r\nFeatures:\r\n* Users are able to register an account and login to it.\r\n* Users can upload audio songs to their profile and provide meta data for it after upload.\r\n* The songs playback through HTML5 player.\r\n* Create playlists from the songs that you have uploaded.\r\n* Search for songs on the website and add them to your account. The other songs have been uploaded by other users.\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
